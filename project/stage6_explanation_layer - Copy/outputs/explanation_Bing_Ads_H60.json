@@ -1,0 +1,63 @@
+{
+  "grain": "Bing Ads",
+  "level": "platform",
+  "horizon_days": 60,
+  "horizon_label": "H60",
+  "generated_at": "2026-06-28T19:28:44.955431",
+  "metrics": {
+    "grain": "Bing Ads",
+    "horizon": "H60",
+    "forecast_date": "2026-02-28",
+    "p10_revenue": 4879.07,
+    "p50_revenue": 6672.71,
+    "p90_revenue": 9842.11,
+    "p10_roas": 2.85,
+    "p50_roas": 3.89,
+    "p90_roas": 5.74,
+    "actual_revenue": 14181.61,
+    "actual_spend": 1713.64,
+    "actual_roas": 8.28,
+    "interval_width": 4963.040000000001,
+    "prev_p50_revenue": 6671.92,
+    "prev_p50_roas": 3.91,
+    "delta_revenue": 0.7899999999999636,
+    "delta_roas": -0.020000000000000018,
+    "pct_change_revenue": 0.011840669552392168,
+    "prev_interval_width": 3860.5500000000006,
+    "interval_width_change": 1102.4900000000002,
+    "coverage": 0.071,
+    "mae": 5512.37,
+    "train_mean": 6456.13,
+    "test_mean": 12275.76
+  },
+  "top_features": [
+    {
+      "feature": "spend_rolling_mean_7d",
+      "importance": 11.0297
+    },
+    {
+      "feature": "spend_rolling_mean_14d",
+      "importance": 6.552133333333333
+    },
+    {
+      "feature": "spend_lag_7",
+      "importance": 1.9452666666666663
+    }
+  ],
+  "anomaly_flags": [
+    {
+      "type": "Overperformance",
+      "description": "Actual revenue ($14,182) is ABOVE the p90 upper bound ($9,842)."
+    },
+    {
+      "type": "Large Forecast Error",
+      "description": "Actual revenue deviates 113% from the p50 forecast."
+    },
+    {
+      "type": "Low Coverage",
+      "description": "Historical coverage rate is only 7.1%, meaning the model is often overconfident."
+    }
+  ],
+  "prompt": "You are a senior marketing analyst. Write a concise 4-sentence business summary for a non-technical executive. Use ONLY the data provided. Do not invent numbers. Use cautious language (\"associated with\", \"correlated with\", \"suggests\") — never claim causation.\n\nGRAIN: Bing Ads\nHORIZON: H60\n\nFORECAST DATA (latest date: 2026-02-28):\n- p50 (median) revenue: $6,673\n- p10 (lower bound): $4,879\n- p90 (upper bound): $9,842\n- p50 ROAS: 3.89x\n- Actual revenue: $14,182\n- Actual ROAS: 8.28x\n\nCHANGE VS PREVIOUS PERIOD:\n- Revenue delta: $1 (+0.0%)\n- Interval width change: $1,102\n\nTOP 3 DRIVERS (by model feature importance):\n1. spend_rolling_mean_7d: 11.0297\n2. spend_rolling_mean_14d: 6.5521\n3. spend_lag_7: 1.9453\n\n\nANOMALY FLAGS:\n- Overperformance: Actual revenue ($14,182) is ABOVE the p90 upper bound ($9,842).\n- Large Forecast Error: Actual revenue deviates 113% from the p50 forecast.\n- Low Coverage: Historical coverage rate is only 7.1%, meaning the model is often overconfident.\n\n\nRULES:\n1. Sentence 1: State the forecast number, interval, and actual result.\n2. Sentence 2: Name the top 2 drivers and explain them in plain business terms.\n3. Sentence 3: Mention the most important anomaly using cautious language.\n4. Sentence 4: Recommend one specific, actionable next step.\n5. Keep sentences short and clear. Avoid jargon.\n6. Do NOT invent numbers. Use only the data above.\n7. Do NOT claim causation. Use \"associated with\" or \"correlated with.\"\n",
+  "narrative": "The forecast for Bing Ads revenue in H60 is $6,673, with a p50 of $6,673 and actual revenue of $14,182. The top two drivers of this revenue are the rolling average of spending over the past seven and fourteen days, which suggests a strong correlation with current spending patterns.  The model is showing an overperformance, with actual revenue exceeding the upper bound of the forecast.  Next, we should investigate the reasons behind the high actual revenue and explore ways to adjust the model's confidence level."
+}

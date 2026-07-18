@@ -1,0 +1,145 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  - elementId: top-bar
+    elementType: shape
+    bounds: [0, 0, 1280, 6]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: title
+    elementType: text
+    bounds: [60, 18, 1100, 38]
+    content:
+      style: "$actionTitle"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>Investigate 118 Flagged Anomalies and Deploy a Model Improvement Roadmap</p>
+  - elementId: divider
+    elementType: shape
+    bounds: [60, 58, 1160, 1]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$border"
+  - elementId: left-header
+    elementType: text
+    bounds: [60, 72, 540, 30]
+    content:
+      style: "$sectionHeader"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>Priority 3: Investigate Anomalies</p>
+  - elementId: left-content
+    elementType: text
+    bounds: [60, 108, 540, 280]
+    content:
+      fontSize: 15
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p>118 anomalies flagged across 42 grain-horizon combinations. Top clusters by severity:</p>
+        <p style="margin-top:6px">• <strong>Google Ads H60:</strong> Overperformance + Structural Shift + Low Coverage</p>
+        <p>• <strong>Meta Ads H60:</strong> Overperformance + Structural Shift + Low Coverage</p>
+        <p>• <strong>Search H60:</strong> Overperformance + Structural Shift + Large Error</p>
+        <p>• <strong>Direct H60:</strong> Overperformance + Structural Shift + Large Error</p>
+        <p>• <strong>Email H60:</strong> Overperformance + Structural Shift + Large Error</p>
+        <p>• <strong>Shopping H60:</strong> Overperformance + Structural Shift + Large Error</p>
+        <p>• <strong>Pmax H60:</strong> ROAS Collapse + Underperformance + Low Coverage</p>
+  - elementId: right-header
+    elementType: text
+    bounds: [640, 72, 580, 30]
+    content:
+      style: "$sectionHeader"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>Priority 4: Model Improvement Roadmap</p>
+  - elementId: right-content
+    elementType: text
+    bounds: [640, 108, 580, 280]
+    content:
+      fontSize: 15
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p><strong>1. Switch to LightGBM:</strong> Enables native SHAP via TreeExplainer, giving more granular per-prediction explanations than permutation importance.</p>
+        <p style="margin-top:6px"><strong>2. Add External Features:</strong> Include competitor ad spend, market indices, or promotional calendars to capture regime changes.</p>
+        <p style="margin-top:6px"><strong>3. Hierarchical Forecasting:</strong> Use top-down or bottom-up reconciliation to ensure platform forecasts sum to campaign-type forecasts.</p>
+        <p style="margin-top:6px"><strong>4. Online Learning:</strong> Implement incremental updates so the model adapts to shifts without full retraining.</p>
+        <p style="margin-top:6px"><strong>5. Upgrade LLM:</strong> Move from Gemma 2B to GPT-4o or Claude Sonnet for more nuanced, grain-name-aware narratives.</p>
+  - elementId: bottom-table
+    elementType: table
+    bounds: [60, 405, 1160, 190]
+    columnWidths: [0.25, 0.15, 0.15, 0.15, 0.30]
+    rowHeights: [0.16, 0.16, 0.16, 0.16, 0.16, 0.20]
+    style: "$default"
+    rows:
+      - - content: {text: "Upgrade"}
+        - content: {text: "Impact"}
+        - content: {text: "Effort"}
+        - content: {text: "Timeline"}
+        - content: {text: "Expected Benefit"}
+      - - content: {text: "LightGBM + SHAP"}
+        - content: {text: "High"}
+        - content: {text: "Medium"}
+        - content: {text: "Q3 2026"}
+        - content: {text: "Granular per-prediction explanations"}
+      - - content: {text: "External Features"}
+        - content: {text: "High"}
+        - content: {text: "High"}
+        - content: {text: "Q4 2026"}
+        - content: {text: "Capture regime changes proactively"}
+      - - content: {text: "Hierarchical Forecasting"}
+        - content: {text: "Medium"}
+        - content: {text: "Medium"}
+        - content: {text: "Q4 2026"}
+        - content: {text: "Consistent platform-level totals"}
+      - - content: {text: "Online Learning"}
+        - content: {text: "Very High"}
+        - content: {text: "High"}
+        - content: {text: "Q1 2027"}
+        - content: {text: "Real-time adaptation to shifts"}
+      - - content: {text: "LLM Upgrade"}
+        - content: {text: "Medium"}
+        - content: {text: "Low"}
+        - content: {text: "Q3 2026"}
+        - content: {text: "More nuanced, actionable narratives"}
+  - elementId: bottom-insight
+    elementType: text
+    bounds: [60, 610, 1160, 75]
+    content:
+      fontSize: 15
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p><strong>Recommended Sequence:</strong> Start with LightGBM + SHAP (Q3 2026) and LLM upgrade (Q3 2026) for immediate explainability gains. Follow with external features (Q4 2026) and hierarchical forecasting (Q4 2026) to improve accuracy. Online learning (Q1 2027) is the capstone for long-term resilience.</p>
+  - elementId: source
+    elementType: text
+    bounds: [60, 692, 1100, 18]
+    content:
+      style: "$caption"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>Source: AIgnition Stage 6 Anomaly Flags and Stage 4 Model Diagnostics</p>
+  - elementId: page-num
+    elementType: text
+    bounds: [1170, 692, 50, 18]
+    content:
+      style: "$caption"
+      align: [right, middle]
+      wrap: false
+      text: |
+        <p>13</p>

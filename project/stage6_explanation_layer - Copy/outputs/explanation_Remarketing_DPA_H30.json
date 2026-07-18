@@ -1,0 +1,59 @@
+{
+  "grain": "Remarketing_DPA",
+  "level": "campaign_type",
+  "horizon_days": 30,
+  "horizon_label": "H30",
+  "generated_at": "2026-06-28T19:30:10.968219",
+  "metrics": {
+    "grain": "Remarketing_DPA",
+    "horizon": "H30",
+    "forecast_date": "2026-02-28",
+    "p10_revenue": 0.0,
+    "p50_revenue": 17881.6,
+    "p90_revenue": 20518.12,
+    "p10_roas": 0.0,
+    "p50_roas": 20.1,
+    "p90_roas": 23.06,
+    "actual_revenue": 3521.45,
+    "actual_spend": 889.74,
+    "actual_roas": 3.96,
+    "interval_width": 20518.12,
+    "prev_p50_revenue": 18462.8,
+    "prev_p50_roas": 20.54,
+    "delta_revenue": -581.2000000000007,
+    "delta_roas": -0.4399999999999977,
+    "pct_change_revenue": -3.1479515566436334,
+    "prev_interval_width": 20492.57,
+    "interval_width_change": 25.549999999999272,
+    "coverage": 1.0,
+    "mae": 9646.98,
+    "train_mean": 4877.55,
+    "test_mean": 16180.58
+  },
+  "top_features": [
+    {
+      "feature": "target_spend_30d",
+      "importance": 2479.1800000000003
+    },
+    {
+      "feature": "dayofmonth_sin",
+      "importance": 19.935766666666666
+    },
+    {
+      "feature": "dow_Monday",
+      "importance": 0.4877666666666667
+    }
+  ],
+  "anomaly_flags": [
+    {
+      "type": "Large Forecast Error",
+      "description": "Actual revenue deviates 80% from the p50 forecast."
+    },
+    {
+      "type": "Structural Shift",
+      "description": "Test-period mean is 3.3x the training mean, suggesting a regime change."
+    }
+  ],
+  "prompt": "You are a senior marketing analyst. Write a concise 4-sentence business summary for a non-technical executive. Use ONLY the data provided. Do not invent numbers. Use cautious language (\"associated with\", \"correlated with\", \"suggests\") — never claim causation.\n\nGRAIN: Remarketing_DPA\nHORIZON: H30\n\nFORECAST DATA (latest date: 2026-02-28):\n- p50 (median) revenue: $17,882\n- p10 (lower bound): $0\n- p90 (upper bound): $20,518\n- p50 ROAS: 20.10x\n- Actual revenue: $3,521\n- Actual ROAS: 3.96x\n\nCHANGE VS PREVIOUS PERIOD:\n- Revenue delta: $-581 (-3.1%)\n- Interval width change: $26\n\nTOP 3 DRIVERS (by model feature importance):\n1. target_spend_30d: 2479.1800\n2. dayofmonth_sin: 19.9358\n3. dow_Monday: 0.4878\n\n\nANOMALY FLAGS:\n- Large Forecast Error: Actual revenue deviates 80% from the p50 forecast.\n- Structural Shift: Test-period mean is 3.3x the training mean, suggesting a regime change.\n\n\nRULES:\n1. Sentence 1: State the forecast number, interval, and actual result.\n2. Sentence 2: Name the top 2 drivers and explain them in plain business terms.\n3. Sentence 3: Mention the most important anomaly using cautious language.\n4. Sentence 4: Recommend one specific, actionable next step.\n5. Keep sentences short and clear. Avoid jargon.\n6. Do NOT invent numbers. Use only the data above.\n7. Do NOT claim causation. Use \"associated with\" or \"correlated with.\"\n",
+  "narrative": "The forecast for Remarketing_DPA revenue in H30 is $17,882 with a 90% confidence interval of $20,518. Actual revenue for this period is $3,521, resulting in a significant revenue shortfall. The top two drivers of this performance are the target spend over the past 30 days and the day of the month, suggesting a strong correlation with campaign timing.  The large forecast error, indicating a significant deviation from the predicted revenue, warrants further investigation.  A deeper analysis of the campaign's performance and its drivers is needed to understand the discrepancy and optimize future performance."
+}

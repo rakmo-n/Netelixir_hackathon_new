@@ -1,0 +1,59 @@
+{
+  "grain": "Meta Ads",
+  "level": "platform",
+  "horizon_days": 30,
+  "horizon_label": "H30",
+  "generated_at": "2026-06-28T19:29:14.171596",
+  "metrics": {
+    "grain": "Meta Ads",
+    "horizon": "H30",
+    "forecast_date": "2026-02-28",
+    "p10_revenue": 0.0,
+    "p50_revenue": 26952.65,
+    "p90_revenue": 44733.41,
+    "p10_roas": 0.0,
+    "p50_roas": 7.89,
+    "p90_roas": 13.09,
+    "actual_revenue": 8656.61,
+    "actual_spend": 3417.19,
+    "actual_roas": 2.53,
+    "interval_width": 44733.41,
+    "prev_p50_revenue": 25574.02,
+    "prev_p50_roas": 7.49,
+    "delta_revenue": 1378.630000000001,
+    "delta_roas": 0.39999999999999947,
+    "pct_change_revenue": 5.390744200559791,
+    "prev_interval_width": 43962.42,
+    "interval_width_change": 770.9900000000052,
+    "coverage": 1.0,
+    "mae": 12232.41,
+    "train_mean": 9771.73,
+    "test_mean": 25574.74
+  },
+  "top_features": [
+    {
+      "feature": "target_spend_30d",
+      "importance": 2362.976533333333
+    },
+    {
+      "feature": "dayofmonth_sin",
+      "importance": 34.48823333333333
+    },
+    {
+      "feature": "spend_share_of_total",
+      "importance": 18.062433333333335
+    }
+  ],
+  "anomaly_flags": [
+    {
+      "type": "Large Forecast Error",
+      "description": "Actual revenue deviates 68% from the p50 forecast."
+    },
+    {
+      "type": "Structural Shift",
+      "description": "Test-period mean is 2.6x the training mean, suggesting a regime change."
+    }
+  ],
+  "prompt": "You are a senior marketing analyst. Write a concise 4-sentence business summary for a non-technical executive. Use ONLY the data provided. Do not invent numbers. Use cautious language (\"associated with\", \"correlated with\", \"suggests\") — never claim causation.\n\nGRAIN: Meta Ads\nHORIZON: H30\n\nFORECAST DATA (latest date: 2026-02-28):\n- p50 (median) revenue: $26,953\n- p10 (lower bound): $0\n- p90 (upper bound): $44,733\n- p50 ROAS: 7.89x\n- Actual revenue: $8,657\n- Actual ROAS: 2.53x\n\nCHANGE VS PREVIOUS PERIOD:\n- Revenue delta: $1,379 (+5.4%)\n- Interval width change: $771\n\nTOP 3 DRIVERS (by model feature importance):\n1. target_spend_30d: 2362.9765\n2. dayofmonth_sin: 34.4882\n3. spend_share_of_total: 18.0624\n\n\nANOMALY FLAGS:\n- Large Forecast Error: Actual revenue deviates 68% from the p50 forecast.\n- Structural Shift: Test-period mean is 2.6x the training mean, suggesting a regime change.\n\n\nRULES:\n1. Sentence 1: State the forecast number, interval, and actual result.\n2. Sentence 2: Name the top 2 drivers and explain them in plain business terms.\n3. Sentence 3: Mention the most important anomaly using cautious language.\n4. Sentence 4: Recommend one specific, actionable next step.\n5. Keep sentences short and clear. Avoid jargon.\n6. Do NOT invent numbers. Use only the data above.\n7. Do NOT claim causation. Use \"associated with\" or \"correlated with.\"\n",
+  "narrative": "The forecast for Meta Ads revenue in H30 is $26,953, with a p50 of $26,953 and actual revenue of $8,657. The top two drivers of revenue are target spend over the past 30 days and the day of the month, suggesting that campaign targeting and timing are key factors.  The model indicates a structural shift in the data, meaning the performance is significantly different from historical trends.  To improve performance, we should analyze the impact of the structural shift and adjust our targeting strategy accordingly."
+}

@@ -1,0 +1,67 @@
+{
+  "grain": "Remarketing_DPA",
+  "level": "campaign_type",
+  "horizon_days": 60,
+  "horizon_label": "H60",
+  "generated_at": "2026-06-28T19:30:13.695879",
+  "metrics": {
+    "grain": "Remarketing_DPA",
+    "horizon": "H60",
+    "forecast_date": "2026-02-28",
+    "p10_revenue": 5362.66,
+    "p50_revenue": 27970.21,
+    "p90_revenue": 28090.81,
+    "p10_roas": 0.22,
+    "p50_roas": 1.13,
+    "p90_roas": 1.14,
+    "actual_revenue": 62386.53,
+    "actual_spend": 24733.09,
+    "actual_roas": 2.52,
+    "interval_width": 22728.15,
+    "prev_p50_revenue": 28003.09,
+    "prev_p50_roas": 1.13,
+    "delta_revenue": -32.88000000000102,
+    "delta_roas": 0.0,
+    "pct_change_revenue": -0.11741561377691184,
+    "prev_interval_width": 22491.99,
+    "interval_width_change": 236.15999999999985,
+    "coverage": 0.0,
+    "mae": 23292.14,
+    "train_mean": 6477.21,
+    "test_mean": 50691.74
+  },
+  "top_features": [
+    {
+      "feature": "spend_lag_14",
+      "importance": 8.508366666666666
+    },
+    {
+      "feature": "target_spend_60d",
+      "importance": 4.9209000000000005
+    },
+    {
+      "feature": "revenue_rolling_mean_14d",
+      "importance": 0.33449999999999996
+    }
+  ],
+  "anomaly_flags": [
+    {
+      "type": "Overperformance",
+      "description": "Actual revenue ($62,387) is ABOVE the p90 upper bound ($28,091)."
+    },
+    {
+      "type": "Large Forecast Error",
+      "description": "Actual revenue deviates 123% from the p50 forecast."
+    },
+    {
+      "type": "Low Coverage",
+      "description": "Historical coverage rate is only 0.0%, meaning the model is often overconfident."
+    },
+    {
+      "type": "Structural Shift",
+      "description": "Test-period mean is 7.8x the training mean, suggesting a regime change."
+    }
+  ],
+  "prompt": "You are a senior marketing analyst. Write a concise 4-sentence business summary for a non-technical executive. Use ONLY the data provided. Do not invent numbers. Use cautious language (\"associated with\", \"correlated with\", \"suggests\") — never claim causation.\n\nGRAIN: Remarketing_DPA\nHORIZON: H60\n\nFORECAST DATA (latest date: 2026-02-28):\n- p50 (median) revenue: $27,970\n- p10 (lower bound): $5,363\n- p90 (upper bound): $28,091\n- p50 ROAS: 1.13x\n- Actual revenue: $62,387\n- Actual ROAS: 2.52x\n\nCHANGE VS PREVIOUS PERIOD:\n- Revenue delta: $-33 (-0.1%)\n- Interval width change: $236\n\nTOP 3 DRIVERS (by model feature importance):\n1. spend_lag_14: 8.5084\n2. target_spend_60d: 4.9209\n3. revenue_rolling_mean_14d: 0.3345\n\n\nANOMALY FLAGS:\n- Overperformance: Actual revenue ($62,387) is ABOVE the p90 upper bound ($28,091).\n- Large Forecast Error: Actual revenue deviates 123% from the p50 forecast.\n- Low Coverage: Historical coverage rate is only 0.0%, meaning the model is often overconfident.\n\n\nRULES:\n1. Sentence 1: State the forecast number, interval, and actual result.\n2. Sentence 2: Name the top 2 drivers and explain them in plain business terms.\n3. Sentence 3: Mention the most important anomaly using cautious language.\n4. Sentence 4: Recommend one specific, actionable next step.\n5. Keep sentences short and clear. Avoid jargon.\n6. Do NOT invent numbers. Use only the data above.\n7. Do NOT claim causation. Use \"associated with\" or \"correlated with.\"\n",
+  "narrative": "The forecast for Remarketing_DPA revenue in H60 is $27,970, with a p50 revenue of $27,970 and actual revenue of $62,387.  The top two drivers of this revenue are a lag in spending and a targeted spend over the past 60 days.  The model is showing an anomaly with a high actual revenue exceeding the upper bound of the forecast.  The next step is to investigate the high actual revenue and assess if adjustments to the model's targeting or spend strategy are needed."
+}

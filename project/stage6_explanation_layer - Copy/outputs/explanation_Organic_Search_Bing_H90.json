@@ -1,0 +1,63 @@
+{
+  "grain": "Organic_Search_Bing",
+  "level": "campaign_type",
+  "horizon_days": 90,
+  "horizon_label": "H90",
+  "generated_at": "2026-06-28T19:29:43.844190",
+  "metrics": {
+    "grain": "Organic_Search_Bing",
+    "horizon": "H90",
+    "forecast_date": "2026-02-28",
+    "p10_revenue": 11587.11,
+    "p50_revenue": 11344.05,
+    "p90_revenue": 13295.3,
+    "p10_roas": NaN,
+    "p50_roas": NaN,
+    "p90_roas": NaN,
+    "actual_revenue": 24159.37,
+    "actual_spend": 0.0,
+    "actual_roas": NaN,
+    "interval_width": 1708.1899999999987,
+    "prev_p50_revenue": 11285.25,
+    "prev_p50_roas": NaN,
+    "delta_revenue": 58.79999999999927,
+    "delta_roas": NaN,
+    "pct_change_revenue": 0.5210340931747127,
+    "prev_interval_width": 2971.959999999999,
+    "interval_width_change": -1263.7700000000004,
+    "coverage": 0.429,
+    "mae": 5027.07,
+    "train_mean": 13085.28,
+    "test_mean": 16446.75
+  },
+  "top_features": [
+    {
+      "feature": "dayofmonth_sin",
+      "importance": 83.71903333333334
+    },
+    {
+      "feature": "dayofmonth_cos",
+      "importance": 46.197300000000006
+    },
+    {
+      "feature": "revenue_rolling_mean_30d",
+      "importance": 12.817433333333332
+    }
+  ],
+  "anomaly_flags": [
+    {
+      "type": "Overperformance",
+      "description": "Actual revenue ($24,159) is ABOVE the p90 upper bound ($13,295)."
+    },
+    {
+      "type": "Large Forecast Error",
+      "description": "Actual revenue deviates 113% from the p50 forecast."
+    },
+    {
+      "type": "Low Coverage",
+      "description": "Historical coverage rate is only 42.9%, meaning the model is often overconfident."
+    }
+  ],
+  "prompt": "You are a senior marketing analyst. Write a concise 4-sentence business summary for a non-technical executive. Use ONLY the data provided. Do not invent numbers. Use cautious language (\"associated with\", \"correlated with\", \"suggests\") — never claim causation.\n\nGRAIN: Organic_Search_Bing\nHORIZON: H90\n\nFORECAST DATA (latest date: 2026-02-28):\n- p50 (median) revenue: $11,344\n- p10 (lower bound): $11,587\n- p90 (upper bound): $13,295\n- p50 ROAS: nanx\n- Actual revenue: $24,159\n- Actual ROAS: nanx\n\nCHANGE VS PREVIOUS PERIOD:\n- Revenue delta: $59 (+0.5%)\n- Interval width change: $-1,264\n\nTOP 3 DRIVERS (by model feature importance):\n1. dayofmonth_sin: 83.7190\n2. dayofmonth_cos: 46.1973\n3. revenue_rolling_mean_30d: 12.8174\n\n\nANOMALY FLAGS:\n- Overperformance: Actual revenue ($24,159) is ABOVE the p90 upper bound ($13,295).\n- Large Forecast Error: Actual revenue deviates 113% from the p50 forecast.\n- Low Coverage: Historical coverage rate is only 42.9%, meaning the model is often overconfident.\n\n\nRULES:\n1. Sentence 1: State the forecast number, interval, and actual result.\n2. Sentence 2: Name the top 2 drivers and explain them in plain business terms.\n3. Sentence 3: Mention the most important anomaly using cautious language.\n4. Sentence 4: Recommend one specific, actionable next step.\n5. Keep sentences short and clear. Avoid jargon.\n6. Do NOT invent numbers. Use only the data above.\n7. Do NOT claim causation. Use \"associated with\" or \"correlated with.\"\n",
+  "narrative": "Our forecast predicts revenue of $13,295 for the next 90 days, with a p50 of $11,344.  The top two drivers of this forecast are the dayofmonth_sin and dayofmonth_cos, which suggest the model is influenced by the day of the month.  The model is showing an overperformance in actual revenue, exceeding the upper bound of the forecast.  We should investigate the reasons behind this overperformance and adjust the model's parameters accordingly."
+}

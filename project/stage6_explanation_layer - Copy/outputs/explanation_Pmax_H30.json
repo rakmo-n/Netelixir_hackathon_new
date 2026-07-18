@@ -1,0 +1,59 @@
+{
+  "grain": "Pmax",
+  "level": "campaign_type",
+  "horizon_days": 30,
+  "horizon_label": "H30",
+  "generated_at": "2026-06-28T19:29:54.521808",
+  "metrics": {
+    "grain": "Pmax",
+    "horizon": "H30",
+    "forecast_date": "2026-02-28",
+    "p10_revenue": 26281.92,
+    "p50_revenue": 27926.32,
+    "p90_revenue": 32690.96,
+    "p10_roas": 1.42,
+    "p50_roas": 1.51,
+    "p90_roas": 1.77,
+    "actual_revenue": 36307.8,
+    "actual_spend": 18502.14,
+    "actual_roas": 1.96,
+    "interval_width": 6409.040000000001,
+    "prev_p50_revenue": 27755.75,
+    "prev_p50_roas": 1.5,
+    "delta_revenue": 170.5699999999997,
+    "delta_roas": 0.010000000000000009,
+    "pct_change_revenue": 0.6145393296884418,
+    "prev_interval_width": 6595.460000000003,
+    "interval_width_change": -186.4200000000019,
+    "coverage": 0.357,
+    "mae": 5434.51,
+    "train_mean": 47780.0,
+    "test_mean": 55751.67
+  },
+  "top_features": [
+    {
+      "feature": "target_spend_30d",
+      "importance": 10439.772966666666
+    },
+    {
+      "feature": "spend",
+      "importance": 780.6660666666667
+    },
+    {
+      "feature": "spend_share_of_total",
+      "importance": 118.02640000000001
+    }
+  ],
+  "anomaly_flags": [
+    {
+      "type": "Overperformance",
+      "description": "Actual revenue ($36,308) is ABOVE the p90 upper bound ($32,691)."
+    },
+    {
+      "type": "Low Coverage",
+      "description": "Historical coverage rate is only 35.7%, meaning the model is often overconfident."
+    }
+  ],
+  "prompt": "You are a senior marketing analyst. Write a concise 4-sentence business summary for a non-technical executive. Use ONLY the data provided. Do not invent numbers. Use cautious language (\"associated with\", \"correlated with\", \"suggests\") — never claim causation.\n\nGRAIN: Pmax\nHORIZON: H30\n\nFORECAST DATA (latest date: 2026-02-28):\n- p50 (median) revenue: $27,926\n- p10 (lower bound): $26,282\n- p90 (upper bound): $32,691\n- p50 ROAS: 1.51x\n- Actual revenue: $36,308\n- Actual ROAS: 1.96x\n\nCHANGE VS PREVIOUS PERIOD:\n- Revenue delta: $171 (+0.6%)\n- Interval width change: $-186\n\nTOP 3 DRIVERS (by model feature importance):\n1. target_spend_30d: 10439.7730\n2. spend: 780.6661\n3. spend_share_of_total: 118.0264\n\n\nANOMALY FLAGS:\n- Overperformance: Actual revenue ($36,308) is ABOVE the p90 upper bound ($32,691).\n- Low Coverage: Historical coverage rate is only 35.7%, meaning the model is often overconfident.\n\n\nRULES:\n1. Sentence 1: State the forecast number, interval, and actual result.\n2. Sentence 2: Name the top 2 drivers and explain them in plain business terms.\n3. Sentence 3: Mention the most important anomaly using cautious language.\n4. Sentence 4: Recommend one specific, actionable next step.\n5. Keep sentences short and clear. Avoid jargon.\n6. Do NOT invent numbers. Use only the data above.\n7. Do NOT claim causation. Use \"associated with\" or \"correlated with.\"\n",
+  "narrative": "The forecast predicts revenue of $27,926 with a 1.51x ROAS, based on the latest data. The top two drivers of this forecast are the target spend over the past 30 days and the overall spend, suggesting a strong correlation with campaign performance.  The model is showing an overperformance in actual revenue, exceeding the upper bound of the forecast.  To mitigate this, we should analyze the model's confidence and adjust the target spend accordingly."
+}

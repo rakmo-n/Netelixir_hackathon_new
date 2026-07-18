@@ -1,0 +1,125 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  - elementId: top-bar
+    elementType: shape
+    bounds: [0, 0, 1280, 6]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: title
+    elementType: text
+    bounds: [60, 18, 1100, 38]
+    content:
+      style: "$actionTitle"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>LLM Explanations Attribute Performance to Specific Drivers and Flag Anomalies</p>
+  - elementId: divider
+    elementType: shape
+    bounds: [60, 58, 1160, 1]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$border"
+  - elementId: card1-accent
+    elementType: shape
+    bounds: [60, 72, 360, 3]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: card1
+    elementType: text
+    bounds: [60, 80, 360, 280]
+    content:
+      fontSize: 14
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p><strong><span style="color:$primary;">Google Ads | H60</span></strong></p>
+        <p style="margin-top:4px"><span style="font-size:13px; color:$secondary;">Forecast: $459K | Actual: $721K</span></p>
+        <p style="margin-top:4px"><span style="font-size:13px; color:$accent;">Flags: Overperformance, Large Forecast Error</span></p>
+        <p style="margin-top:8px">"The top two drivers are target spend over the past 60 days and a rolling average of spend over the past 14 days. The model is showing an overperformance, with actual revenue exceeding the p90 upper bound. A next step is to investigate the model's high confidence level."</p>
+  - elementId: card2-accent
+    elementType: shape
+    bounds: [460, 72, 360, 3]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: card2
+    elementType: text
+    bounds: [460, 80, 360, 280]
+    content:
+      fontSize: 14
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p><strong><span style="color:$primary;">Meta Ads | H30</span></strong></p>
+        <p style="margin-top:4px"><span style="font-size:13px; color:$secondary;">Forecast: $27K | Actual: $9K</span></p>
+        <p style="margin-top:4px"><span style="font-size:13px; color:$accent;">Flags: Large Forecast Error, Structural Shift</span></p>
+        <p style="margin-top:8px">"The top two drivers are target spend over the past 30 days and the day of the month. The model indicates a structural shift in the data. To improve performance, we should analyze the impact of the structural shift and adjust our targeting strategy accordingly."</p>
+  - elementId: card3-accent
+    elementType: shape
+    bounds: [860, 72, 360, 3]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: card3
+    elementType: text
+    bounds: [860, 80, 360, 280]
+    content:
+      fontSize: 14
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p><strong><span style="color:$primary;">Search | H30</span></strong></p>
+        <p style="margin-top:4px"><span style="font-size:13px; color:$secondary;">Forecast: $119K | Actual: $51K</span></p>
+        <p style="margin-top:4px"><span style="font-size:13px; color:$accent;">Flags: Underperformance, Large Forecast Error</span></p>
+        <p style="margin-top:8px">"The top two drivers are target spend over the past 30 days and overall spending. The actual revenue is below the p10 lower bound, suggesting underperformance. Next, we should investigate the reasons behind the structural shift in the test period."</p>
+  - elementId: bottom-summary
+    elementType: text
+    bounds: [60, 380, 1160, 300]
+    content:
+      fontSize: 16
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p><strong>Value of AI Explanations:</strong> The LLM layer transforms raw forecast metrics into actionable business narratives. Each explanation identifies the top two revenue drivers by permutation importance, flags anomalies with specific caution language, and recommends a concrete next step.</p>
+        <p style="margin-top:8px"><strong>Driver Attribution Patterns:</strong></p>
+        <p>• <strong>Target spend (30d/60d/90d)</strong> is the dominant driver across all paid channels, confirming that planned spend is the strongest predictor of revenue.</p>
+        <p>• <strong>Rolling averages (7d, 14d, 30d)</strong> are secondary drivers, capturing momentum effects.</p>
+        <p>• <strong>Day-of-month and day-of-week</strong> features are significant for organic and remarketing channels, reflecting calendar-driven seasonality.</p>
+        <p style="margin-top:8px"><strong>Quality Assurance:</strong> All 42 narratives passed validation: number-grounded (no hallucination), causally cautious (associative language only), and actionable (specific next steps provided).</p>
+  - elementId: source
+    elementType: text
+    bounds: [60, 692, 1100, 18]
+    content:
+      style: "$caption"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>Source: AIgnition Stage 6 AI Explanation, Selected Narratives from 42 Grain-Horizon Outputs</p>
+  - elementId: page-num
+    elementType: text
+    bounds: [1170, 692, 50, 18]
+    content:
+      style: "$caption"
+      align: [right, middle]
+      wrap: false
+      text: |
+        <p>11</p>

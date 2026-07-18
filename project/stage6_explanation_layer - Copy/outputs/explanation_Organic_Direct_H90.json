@@ -1,0 +1,55 @@
+{
+  "grain": "Organic/Direct",
+  "level": "platform",
+  "horizon_days": 90,
+  "horizon_label": "H90",
+  "generated_at": "2026-06-28T19:29:27.397970",
+  "metrics": {
+    "grain": "Organic/Direct",
+    "horizon": "H90",
+    "forecast_date": "2026-02-28",
+    "p10_revenue": 202291.96,
+    "p50_revenue": 345357.6,
+    "p90_revenue": 208341.59,
+    "p10_roas": NaN,
+    "p50_roas": NaN,
+    "p90_roas": NaN,
+    "actual_revenue": 445041.3,
+    "actual_spend": 0.0,
+    "actual_roas": NaN,
+    "interval_width": 6049.630000000005,
+    "prev_p50_revenue": 315001.23,
+    "prev_p50_roas": NaN,
+    "delta_revenue": 30356.369999999995,
+    "delta_roas": NaN,
+    "pct_change_revenue": 9.636905227322446,
+    "prev_interval_width": 4394.0,
+    "interval_width_change": 1655.6300000000047,
+    "coverage": 0.5,
+    "mae": 79406.76,
+    "train_mean": 246167.0,
+    "test_mean": 307224.78
+  },
+  "top_features": [
+    {
+      "feature": "revenue_rolling_mean_14d",
+      "importance": 3345.8194333333327
+    },
+    {
+      "feature": "dayofmonth_sin",
+      "importance": 713.7485
+    },
+    {
+      "feature": "dayofmonth_cos",
+      "importance": 486.76026666666667
+    }
+  ],
+  "anomaly_flags": [
+    {
+      "type": "Overperformance",
+      "description": "Actual revenue ($445,041) is ABOVE the p90 upper bound ($208,342)."
+    }
+  ],
+  "prompt": "You are a senior marketing analyst. Write a concise 4-sentence business summary for a non-technical executive. Use ONLY the data provided. Do not invent numbers. Use cautious language (\"associated with\", \"correlated with\", \"suggests\") — never claim causation.\n\nGRAIN: Organic/Direct\nHORIZON: H90\n\nFORECAST DATA (latest date: 2026-02-28):\n- p50 (median) revenue: $345,358\n- p10 (lower bound): $202,292\n- p90 (upper bound): $208,342\n- p50 ROAS: nanx\n- Actual revenue: $445,041\n- Actual ROAS: nanx\n\nCHANGE VS PREVIOUS PERIOD:\n- Revenue delta: $30,356 (+9.6%)\n- Interval width change: $1,656\n\nTOP 3 DRIVERS (by model feature importance):\n1. revenue_rolling_mean_14d: 3345.8194\n2. dayofmonth_sin: 713.7485\n3. dayofmonth_cos: 486.7603\n\n\nANOMALY FLAGS:\n- Overperformance: Actual revenue ($445,041) is ABOVE the p90 upper bound ($208,342).\n\n\nRULES:\n1. Sentence 1: State the forecast number, interval, and actual result.\n2. Sentence 2: Name the top 2 drivers and explain them in plain business terms.\n3. Sentence 3: Mention the most important anomaly using cautious language.\n4. Sentence 4: Recommend one specific, actionable next step.\n5. Keep sentences short and clear. Avoid jargon.\n6. Do NOT invent numbers. Use only the data above.\n7. Do NOT claim causation. Use \"associated with\" or \"correlated with.\"\n",
+  "narrative": "The forecast predicts revenue of $345,358 for the H90 period, with a p90 upper bound of $208,342.  The top two drivers of revenue are a rolling 14-day average and the day of the month, suggesting these factors are associated with sales performance.  The actual revenue is above the p90 upper bound, indicating potential overperformance.  To mitigate this, we should investigate the factors driving the high revenue and consider adjusting our marketing strategies accordingly."
+}
