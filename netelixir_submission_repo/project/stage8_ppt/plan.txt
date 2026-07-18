@@ -1,0 +1,24 @@
+project/stage8_ppt/
+├── outline.md
+├── design.md
+├── aignition_report.pptd
+└── pages/
+    ├── cover.page
+    ├── toc.page
+    ├── chapter1.page
+    ├── slide1.page
+    ├── slide2.page
+    ├── slide3.page
+    ├── chapter2.page
+    ├── slide4.page
+    ├── slide5.page
+    ├── slide6.page
+    ├── chapter3.page
+    ├── slide7.page
+    ├── slide8.page
+    ├── slide9.page
+    ├── slide10.page
+    ├── chapter4.page
+    ├── slide11.page
+    ├── slide12.page
+    └── final.page

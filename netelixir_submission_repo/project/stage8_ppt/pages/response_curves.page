@@ -1,0 +1,145 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  - elementId: top-bar
+    elementType: shape
+    bounds: [0, 0, 1280, 6]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: title
+    elementType: text
+    bounds: [60, 18, 1100, 38]
+    content:
+      style: "$actionTitle"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>Hill Function and Power-Law Models Capture Budget-Revenue Dynamics With R² Up to 0.90</p>
+  - elementId: divider
+    elementType: shape
+    bounds: [60, 58, 1160, 1]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$border"
+  - elementId: response-chart
+    elementType: chart
+    bounds: [60, 72, 700, 300]
+    type: bar
+    data:
+      - {grain: "Bing Ads", r2: 0.266}
+      - {grain: "Google Ads", r2: 0.845}
+      - {grain: "Meta Ads", r2: 0.680}
+      - {grain: "Search", r2: 0.750}
+      - {grain: "Pmax", r2: 0.873}
+      - {grain: "Shopping", r2: 0.903}
+      - {grain: "Remarketing DPA", r2: 0.682}
+      - {grain: "Remarketing Brand", r2: 0.304}
+    x: grain
+    y: [r2]
+    names: ["R²"]
+    colors: ["$accent"]
+    legend: false
+    yAxis:
+      title: "R²"
+      gridLine: {color: "$grid"}
+      min: 0
+      max: 1
+      numberFormat: "0.00"
+    xAxis:
+      label: {fontSize: 11}
+    dataLabels:
+      show: true
+      fontSize: 11
+      numberFormat: "0.000"
+  - elementId: right-insight
+    elementType: text
+    bounds: [800, 72, 420, 300]
+    content:
+      fontSize: 15
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p><strong>Model Fit Summary:</strong></p>
+        <p style="margin-top:6px">• <strong>Shopping</strong> and <strong>Pmax</strong> show the strongest fit (R² &gt; 0.87), indicating consistent budget-revenue relationships.</p>
+        <p style="margin-top:6px">• <strong>Google Ads</strong> (R² 0.845) and <strong>Search</strong> (R² 0.750) also show strong fit using the Hill function.</p>
+        <p style="margin-top:6px">• <strong>Bing Ads</strong> (R² 0.266) and <strong>Remarketing Brand</strong> (R² 0.304) show weaker fit, suggesting higher variance or fewer data points.</p>
+        <p style="margin-top:6px">• Hill function dominates (6/8 grains), while power-law fits Pmax and Remarketing Brand best.</p>
+  - elementId: bottom-table
+    elementType: table
+    bounds: [60, 390, 1160, 200]
+    columnWidths: [0.25, 0.30, 0.20, 0.25]
+    rowHeights: [0.11, 0.11, 0.11, 0.11, 0.11, 0.11, 0.11, 0.11, 0.12]
+    style: "$default"
+    rows:
+      - - content: {text: "Grain"}
+        - content: {text: "Best Fit Function"}
+        - content: {text: "R²"}
+        - content: {text: "Interpretation"}
+      - - content: {text: "Shopping"}
+        - content: {text: "Hill function"}
+        - content: {text: "0.903"}
+        - content: {text: "Strongest fit, consistent relationship"}
+      - - content: {text: "Pmax"}
+        - content: {text: "Power law"}
+        - content: {text: "0.873"}
+        - content: {text: "Strong fit, diminishing returns"}
+      - - content: {text: "Google Ads"}
+        - content: {text: "Hill function"}
+        - content: {text: "0.845"}
+        - content: {text: "Strong fit, saturation curve"}
+      - - content: {text: "Search"}
+        - content: {text: "Hill function"}
+        - content: {text: "0.750"}
+        - content: {text: "Good fit, steep saturation"}
+      - - content: {text: "Remarketing DPA"}
+        - content: {text: "Hill function"}
+        - content: {text: "0.682"}
+        - content: {text: "Moderate fit, some variance"}
+      - - content: {text: "Meta Ads"}
+        - content: {text: "Hill function"}
+        - content: {text: "0.680"}
+        - content: {text: "Moderate fit, regime shift noise"}
+      - - content: {text: "Bing Ads"}
+        - content: {text: "Hill function"}
+        - content: {text: "0.266"}
+        - content: {text: "Weak fit, high variance"}
+      - - content: {text: "Remarketing Brand"}
+        - content: {text: "Power law"}
+        - content: {text: "0.304"}
+        - content: {text: "Weak fit, limited data"}
+  - elementId: bottom-insight
+    elementType: text
+    bounds: [60, 605, 1160, 80]
+    content:
+      fontSize: 15
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p><strong>Note:</strong> All curves fitted via scipy.optimize.curve_fit with budget multipliers 0.5x–2.0x. Lower R² in Bing Ads and Remarketing Brand may reflect data sparsity or external noise rather than poor model specification.</p>
+  - elementId: source
+    elementType: text
+    bounds: [60, 692, 1100, 18]
+    content:
+      style: "$caption"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>Source: AIgnition Stage 5 Budget Simulation, Response Curve Fitting</p>
+  - elementId: page-num
+    elementType: text
+    bounds: [1170, 692, 50, 18]
+    content:
+      style: "$caption"
+      align: [right, middle]
+      wrap: false
+      text: |
+        <p>08</p>

@@ -1,0 +1,128 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  - elementId: top-bar
+    elementType: shape
+    bounds: [0, 0, 1280, 6]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: title
+    elementType: text
+    bounds: [60, 18, 1100, 38]
+    content:
+      style: "$actionTitle"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>Pmax Nears Saturation at 1.3x ROAS While Bing Ads Shows 6.3x Potential</p>
+  - elementId: divider
+    elementType: shape
+    bounds: [60, 58, 1160, 1]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$border"
+  - elementId: pmax-number
+    elementType: text
+    bounds: [60, 72, 540, 120]
+    content:
+      align: [left, top]
+      lineHeight: 1.2
+      text: |
+        <p><span style="font-size:56px; color:$primary; font-family:Oranienbaum;">1.26x</span></p>
+        <p><span style="font-size:16px; color:$secondary;">Pmax H30 Baseline ROAS</span></p>
+  - elementId: pmax-details
+    elementType: text
+    bounds: [60, 200, 540, 100]
+    content:
+      fontSize: 15
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p>• Daily spend: <strong>$1,000</strong> (highest of all channels)</p>
+        <p>• H60 ROAS: 1.30x | H90 ROAS: 1.01x</p>
+        <p>• Status: <span style="color:$accent;"><strong>Near saturation</strong></span> — diminishing returns even at current spend</p>
+  - elementId: bing-number
+    elementType: text
+    bounds: [660, 72, 560, 120]
+    content:
+      align: [left, top]
+      lineHeight: 1.2
+      text: |
+        <p><span style="font-size:56px; color:$accent; font-family:Oranienbaum;">6.27x</span></p>
+        <p><span style="font-size:16px; color:$secondary;">Bing Ads H30 Baseline ROAS</span></p>
+  - elementId: bing-details
+    elementType: text
+    bounds: [660, 200, 560, 100]
+    content:
+      fontSize: 15
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p>• Daily spend: <strong>$44</strong> (lowest of all paid channels)</p>
+        <p>• H60 ROAS: 1.99x | H90 ROAS: 2.25x</p>
+        <p>• Status: <span style="color:$accent;"><strong>Underutilized</strong></span> — significant reallocation potential</p>
+  - elementId: comparison-table
+    elementType: table
+    bounds: [60, 320, 1160, 220]
+    columnWidths: [0.22, 0.15, 0.18, 0.45]
+    rowHeights: [0.20, 0.20, 0.20, 0.20, 0.20]
+    style: "$default"
+    rows:
+      - - content: {text: "Channel"}
+        - content: {text: "H30 ROAS"}
+        - content: {text: "Daily Spend"}
+        - content: {text: "Recommendation"}
+      - - content: {text: "Pmax"}
+        - content: {text: "1.26x"}
+        - content: {text: "$1,000"}
+        - content: {text: "Reduce budget or optimize targeting"}
+      - - content: {text: "Bing Ads"}
+        - content: {text: "6.27x"}
+        - content: {text: "$44"}
+        - content: {text: "Increase budget significantly"}
+      - - content: {text: "Google Ads 90d"}
+        - content: {text: "1.47x"}
+        - content: {text: "$2,000"}
+        - content: {text: "Reduce long-horizon spend"}
+      - - content: {text: "Meta Ads 30d"}
+        - content: {text: "5.02x"}
+        - content: {text: "$221"}
+        - content: {text: "Increase budget moderately"}
+  - elementId: bottom-insight
+    elementType: text
+    bounds: [60, 555, 1160, 130]
+    content:
+      fontSize: 16
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p><strong>Strategic Insight:</strong> Pmax consumes $1,000/day for a 1.26x return — barely above breakeven. Bing Ads delivers 5× the ROAS at 4% of the spend. Reallocating $500 from Pmax to Bing Ads and Search could improve portfolio ROAS from 2.8x to 4.5x while maintaining total spend. The structural shift in Feb 2026 amplifies the uncertainty in Pmax forecasts.</p>
+  - elementId: source
+    elementType: text
+    bounds: [60, 692, 1100, 18]
+    content:
+      style: "$caption"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>Source: AIgnition Stage 5 Budget Simulation, Appendix C Baseline 1.0x</p>
+  - elementId: page-num
+    elementType: text
+    bounds: [1170, 692, 50, 18]
+    content:
+      style: "$caption"
+      align: [right, middle]
+      wrap: false
+      text: |
+        <p>07</p>

@@ -1,0 +1,60 @@
+pageType: final
+background:
+  type: solid
+  color: "$background"
+elements:
+  - elementId: top-bar
+    elementType: shape
+    bounds: [0, 0, 1280, 6]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: closing-title
+    elementType: text
+    bounds: [60, 200, 1160, 80]
+    content:
+      style: "$coverTitle"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p>Thank You</p>
+  - elementId: accent-line
+    elementType: shape
+    bounds: [440, 295, 400, 2]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: closing-subtitle
+    elementType: text
+    bounds: [60, 315, 1160, 50]
+    content:
+      style: "$coverSubtitle"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p>Questions &amp; Discussion</p>
+  - elementId: closing-meta
+    elementType: text
+    bounds: [60, 400, 1160, 80]
+    content:
+      fontSize: 16
+      color: "$secondary"
+      fontFamily: "Liter"
+      align: [center, middle]
+      lineHeight: 1.6
+      text: |
+        <p>AIgnition Pipeline | Stages 1–9</p>
+        <p>Re-run the pipeline for updated forecasts, simulations, and explanations</p>
+  - elementId: closing-footer
+    elementType: text
+    bounds: [60, 500, 1160, 30]
+    content:
+      fontSize: 14
+      color: "$secondary"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p>Data Period: Jan 2024 – Jun 2026 | 25,562 Records | 14 Grains | 42 AI Explanations</p>

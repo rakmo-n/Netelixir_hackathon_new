@@ -1,0 +1,62 @@
+STAGE 3 BASELINE DETERMINISTIC MODELS — SANITY CHECK REPORT
+=================================================================
+
+Holdout period: last 90 days of each series
+Forecast horizons: [30, 60, 90] days
+Minimum non-zero days required: 60
+Minimum total history required: 120
+
+Series successfully modeled: 14
+Skipped (too sparse / short): 0
+Failed to fit: 0
+
+SKIPPED SERIES
+------------------------------
+
+VALIDATION METRICS (90-day holdout)
+----------------------------------------
+  [platform] Bing Ads: HW MAE=77.82, RMSE=94.42, MAPE=56.07% | SN MAE=91.91, RMSE=118.96, MAPE=77.93%
+  [platform] Google Ads: HW MAE=2483.62, RMSE=2850.95, MAPE=70.76% | SN MAE=2182.34, RMSE=2664.14, MAPE=55.08%
+  [platform] Meta Ads: HW MAE=172.14, RMSE=205.14, MAPE=123.29% | SN MAE=216.98, RMSE=271.77, MAPE=138.22%
+  [platform] Organic/Direct: HW MAE=4620.7, RMSE=4973.5, MAPE=211.94% | SN MAE=2451.22, RMSE=2902.51, MAPE=122.09%
+  [campaign_type] Search: HW MAE=937.54, RMSE=1100.16, MAPE=55.89% | SN MAE=809.0, RMSE=986.22, MAPE=44.5%
+  [campaign_type] Pmax: HW MAE=2910.58, RMSE=2999.66, MAPE=292.81% | SN MAE=1824.67, RMSE=2233.07, MAPE=183.23%
+  [campaign_type] Direct: HW MAE=2138.52, RMSE=2275.26, MAPE=244.25% | SN MAE=1263.41, RMSE=1524.49, MAPE=147.71%
+  [campaign_type] Organic_Search: HW MAE=738.94, RMSE=846.18, MAPE=175.21% | SN MAE=714.01, RMSE=822.05, MAPE=154.61%
+  [campaign_type] Email: HW MAE=944.25, RMSE=1054.05, MAPE=197.19% | SN MAE=696.22, RMSE=867.11, MAPE=126.99%
+  [campaign_type] Shopping: HW MAE=1178.2, RMSE=1762.17, MAPE=87.98% | SN MAE=1211.62, RMSE=1788.71, MAPE=93.17%
+  [campaign_type] Organic_Search_Bing: HW MAE=138.53, RMSE=165.07, MAPE=108.27% | SN MAE=183.06, RMSE=225.99, MAPE=179.18%
+  [campaign_type] Remarketing_DPA: HW MAE=152.57, RMSE=202.21, MAPE=69.85% | SN MAE=143.51, RMSE=187.8, MAPE=89.96%
+  [campaign_type] Organic_Social: HW MAE=102.25, RMSE=133.19, MAPE=86.46% | SN MAE=161.78, RMSE=196.26, MAPE=144.56%
+  [campaign_type] Remarketing_Brand: HW MAE=12.96, RMSE=36.25, MAPE=91.96% | SN MAE=9.65, RMSE=36.17, MAPE=100.0%
+
+SANITY CHECKS
+------------------------------
+  [PASS] Bing Ads: test/train mean ratio = 0.70x
+  [PASS] Google Ads: test/train mean ratio = 1.36x
+  [PASS] Meta Ads: test/train mean ratio = 0.94x
+  [PASS] Organic/Direct: test/train mean ratio = 1.13x
+  [PASS] Search: test/train mean ratio = 1.36x
+  [PASS] Pmax: test/train mean ratio = 0.88x
+  [PASS] Direct: test/train mean ratio = 1.09x
+  [PASS] Organic_Search: test/train mean ratio = 1.15x
+  [PASS] Email: test/train mean ratio = 1.15x
+  [WARN] Shopping: test mean is 3.41x train mean (drift?)
+  [PASS] Organic_Search_Bing: test/train mean ratio = 1.15x
+  [PASS] Remarketing_DPA: test/train mean ratio = 1.09x
+  [PASS] Organic_Social: test/train mean ratio = 1.22x
+  [WARN] Remarketing_Brand: test mean is 0.12x train mean (drift?)
+  [PASS] Bing Ads: HW MAE (77.82) <= 1.5x SN MAE (91.91)
+  [PASS] Google Ads: HW MAE (2483.62) <= 1.5x SN MAE (2182.34)
+  [PASS] Meta Ads: HW MAE (172.14) <= 1.5x SN MAE (216.98)
+  [WARN] Organic/Direct: HW MAE (4620.7) >> SN MAE (2451.22) — model may be overfitting or misspecified
+  [PASS] Search: HW MAE (937.54) <= 1.5x SN MAE (809.0)
+  [WARN] Pmax: HW MAE (2910.58) >> SN MAE (1824.67) — model may be overfitting or misspecified
+  [WARN] Direct: HW MAE (2138.52) >> SN MAE (1263.41) — model may be overfitting or misspecified
+  [PASS] Organic_Search: HW MAE (738.94) <= 1.5x SN MAE (714.01)
+  [PASS] Email: HW MAE (944.25) <= 1.5x SN MAE (696.22)
+  [PASS] Shopping: HW MAE (1178.2) <= 1.5x SN MAE (1211.62)
+  [PASS] Organic_Search_Bing: HW MAE (138.53) <= 1.5x SN MAE (183.06)
+  [PASS] Remarketing_DPA: HW MAE (152.57) <= 1.5x SN MAE (143.51)
+  [PASS] Organic_Social: HW MAE (102.25) <= 1.5x SN MAE (161.78)
+  [PASS] Remarketing_Brand: HW MAE (12.96) <= 1.5x SN MAE (9.65)

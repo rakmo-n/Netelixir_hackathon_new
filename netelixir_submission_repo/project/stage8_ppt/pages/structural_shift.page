@@ -1,0 +1,148 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  - elementId: top-bar
+    elementType: shape
+    bounds: [0, 0, 1280, 6]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: title
+    elementType: text
+    bounds: [60, 18, 1100, 38]
+    content:
+      style: "$actionTitle"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>Feb 2026 Regime Change Drives 2–5x Test-Period Revenue Surge Across Paid Channels</p>
+  - elementId: divider
+    elementType: shape
+    bounds: [60, 58, 1160, 1]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$border"
+  - elementId: shift-table
+    elementType: table
+    bounds: [60, 72, 700, 340]
+    columnWidths: [0.25, 0.15, 0.20, 0.20, 0.20]
+    rowHeights: [0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10]
+    style: "$default"
+    rows:
+      - - content: {text: "Grain"}
+        - content: {text: "Horizon"}
+        - content: {text: "Train Mean"}
+        - content: {text: "Test Mean"}
+        - content: {text: "Ratio"}
+      - - content: {text: "Shopping"}
+        - content: {text: "60d"}
+        - content: {text: "$8K"}
+        - content: {text: "$183K"}
+        - content: {text: "24.1x"}
+      - - content: {text: "Meta Ads"}
+        - content: {text: "60d"}
+        - content: {text: "$15K"}
+        - content: {text: "$78K"}
+        - content: {text: "5.2x"}
+      - - content: {text: "Search"}
+        - content: {text: "60d"}
+        - content: {text: "$76K"}
+        - content: {text: "$311K"}
+        - content: {text: "4.1x"}
+      - - content: {text: "Shopping"}
+        - content: {text: "30d"}
+        - content: {text: "$10K"}
+        - content: {text: "$41K"}
+        - content: {text: "4.0x"}
+      - - content: {text: "Google Ads"}
+        - content: {text: "60d"}
+        - content: {text: "$168K"}
+        - content: {text: "$649K"}
+        - content: {text: "3.9x"}
+      - - content: {text: "Organic Social"}
+        - content: {text: "60d"}
+        - content: {text: "$6K"}
+        - content: {text: "$24K"}
+        - content: {text: "3.8x"}
+      - - content: {text: "Organic Search Bing"}
+        - content: {text: "60d"}
+        - content: {text: "$9K"}
+        - content: {text: "$31K"}
+        - content: {text: "3.5x"}
+      - - content: {text: "Email"}
+        - content: {text: "60d"}
+        - content: {text: "$42K"}
+        - content: {text: "$142K"}
+        - content: {text: "3.4x"}
+      - - content: {text: "Direct"}
+        - content: {text: "60d"}
+        - content: {text: "$67K"}
+        - content: {text: "$220K"}
+        - content: {text: "3.3x"}
+  - elementId: right-callout1
+    elementType: text
+    bounds: [800, 72, 420, 90]
+    content:
+      align: [left, top]
+      lineHeight: 1.2
+      text: |
+        <p><span style="font-size:42px; color:$primary; font-family:Oranienbaum;">18+</span></p>
+        <p><span style="font-size:14px; color:$secondary;">Grains With Structural Shift</span></p>
+  - elementId: right-callout2
+    elementType: text
+    bounds: [800, 172, 420, 90]
+    content:
+      align: [left, top]
+      lineHeight: 1.2
+      text: |
+        <p><span style="font-size:42px; color:$primary; font-family:Oranienbaum;">0%</span></p>
+        <p><span style="font-size:14px; color:$secondary;">Coverage at H60/H90 for Shifted Grains</span></p>
+  - elementId: right-insight
+    elementType: text
+    bounds: [800, 272, 420, 140]
+    content:
+      fontSize: 14
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p><strong>Feb 2026 marks a regime change.</strong> Models trained on pre-shift data systematically underforecast post-shift revenue. The shift is universal across all paid and organic channels.</p>
+  - elementId: bottom-action
+    elementType: text
+    bounds: [60, 430, 1160, 250]
+    content:
+      fontSize: 16
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p><strong>Action Required:</strong> Retrain models with post-Feb 2026 data. Consider adding a "regime" indicator feature to capture the structural shift. 18+ grains across all platforms show test-period means &gt;2× training means, indicating the shift is universal, not isolated to a single channel.</p>
+        <p style="margin-top:8px"><strong>Key Implications:</strong></p>
+        <p>• Google Ads (60d): Test mean $649K vs train mean $168K (3.9x) — largest absolute dollar impact</p>
+        <p>• Meta Ads (60d): Test mean $78K vs train mean $15K (5.2x) — highest relative surge among paid channels</p>
+        <p>• Search (60d): Test mean $311K vs train mean $76K (4.1x) — highest ROAS channel also shifted</p>
+        <p>• Shopping (60d): Test mean $183K vs train mean $8K (24.1x) — most extreme shift, but low absolute base</p>
+  - elementId: source
+    elementType: text
+    bounds: [60, 692, 1100, 18]
+    content:
+      style: "$caption"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>Source: AIgnition Stage 4 Probabilistic Forecast Validation, Feb 2026 Test Period</p>
+  - elementId: page-num
+    elementType: text
+    bounds: [1170, 692, 50, 18]
+    content:
+      style: "$caption"
+      align: [right, middle]
+      wrap: false
+      text: |
+        <p>05</p>

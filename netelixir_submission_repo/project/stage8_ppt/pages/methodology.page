@@ -1,0 +1,86 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  - elementId: top-bar
+    elementType: shape
+    bounds: [0, 0, 1280, 6]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: title
+    elementType: text
+    bounds: [60, 18, 1100, 38]
+    content:
+      style: "$actionTitle"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>Five-Stage Pipeline Delivers Probabilistic Forecasts With AI Explanations</p>
+  - elementId: divider
+    elementType: shape
+    bounds: [60, 58, 1160, 1]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$border"
+  - elementId: methodology-table
+    elementType: table
+    bounds: [60, 72, 1160, 250]
+    columnWidths: [0.15, 0.45, 0.40]
+    rowHeights: [0.15, 0.17, 0.17, 0.17, 0.17, 0.17]
+    style: "$default"
+    rows:
+      - - content: {text: "Stage"}
+        - content: {text: "Description"}
+        - content: {text: "Key Output"}
+      - - content: {text: "1. Data Ingestion"}
+        - content: {text: "ZIP extraction, unified Bing/Google/Meta/Organic, validation, EDA"}
+        - content: {text: "25,440 rows, 20+ features"}
+      - - content: {text: "2. Baseline Validation"}
+        - content: {text: "Holt-Winters ETS + Seasonal Naive, train/test sanity checks"}
+        - content: {text: "14 grains passed both checks"}
+      - - content: {text: "3. Probabilistic Forecast"}
+        - content: {text: "HistGradientBoosting quantile regression at p10/p50/p90"}
+        - content: {text: "1,176 forecast rows (14×3×28)"}
+      - - content: {text: "4. Budget Simulation"}
+        - content: {text: "Log-saturation, power-law, Hill function response curves"}
+        - content: {text: "252 simulation rows (8×3×6)"}
+      - - content: {text: "5. AI Explanation"}
+        - content: {text: "NVIDIA LLM with structured prompts and causal caution"}
+        - content: {text: "42 JSON narratives"}
+  - elementId: methodology-details
+    elementType: text
+    bounds: [60, 340, 1160, 340]
+    content:
+      fontSize: 16
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.4
+      align: [left, top]
+      text: |
+        <p><strong>Stage 1 — Data Ingestion &amp; EDA:</strong> Extracted from ZIP, unified Bing Ads, Google Ads, Meta Ads, and Organic/Direct into a single CSV with 25,440 rows. 13 data quality checks + 5 reconciliation checks found no critical issues. Feature engineering produced 20+ features per grain including spend lags, rolling means, seasonality, and day-of-week dummies.</p>
+        <p style="margin-top:8px"><strong>Stage 2 — Baseline Validation:</strong> Holt-Winters ETS (exponential smoothing with trend and seasonality, period=7) and Seasonal Naive benchmarks. Sanity checks required (1) train/test mean ratio within 0.33x–3x and (2) HW MAE ≤ 1.5× SN MAE. All 14 grains passed both checks.</p>
+        <p style="margin-top:8px"><strong>Stage 3 — Probabilistic Forecasting:</strong> HistGradientBoostingRegressor with loss='quantile' at p10, p50, p90. Walk-forward validation: train pre-2026-02-01, test on Feb 2026 (28 dates). Permutation importance (model-agnostic) used for feature attribution since quantile mode doesn't expose native importance.</p>
+        <p style="margin-top:8px"><strong>Stage 4 — Budget Simulation:</strong> Response curves (log-saturation, power-law, and Hill function) fitted via scipy.optimize.curve_fit. Budget multipliers tested: 0.5x, 0.75x, 1.0x, 1.25x, 1.5x, 2.0x. Output: 252 simulation rows (8 spend-enabled grains × 3 horizons × 6 multipliers).</p>
+        <p style="margin-top:8px"><strong>Stage 5 — AI Explanation:</strong> Metrics computed (deltas, permutation importance, anomaly flags: Z-score, coverage, structural shift). NVIDIA API (google/gemma-2-2b-it) via OpenAI-compatible endpoint. 4-sentence structured prompts with explicit constraints: cite numbers, name drivers, flag anomalies with caution, recommend action. All narratives use "associated with" or "correlated with" — never claiming causation.</p>
+  - elementId: source
+    elementType: text
+    bounds: [60, 692, 1100, 18]
+    content:
+      style: "$caption"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>Source: AIgnition Pipeline Stages 1–9, Data Period Jan 2024 – Jun 2026</p>
+  - elementId: page-num
+    elementType: text
+    bounds: [1170, 692, 50, 18]
+    content:
+      style: "$caption"
+      align: [right, middle]
+      wrap: false
+      text: |
+        <p>04</p>
